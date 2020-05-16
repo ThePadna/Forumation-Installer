@@ -6,6 +6,7 @@ const http = require('http');
 const request = require('request');
 const admzip = require('adm-zip');
 const fse = require("fs-extra");
+const git = require("simple-git");
 
 const NGINX_PATH = "./nginx",
  MARIADB_PATH = "./mariadb",
@@ -38,7 +39,6 @@ async function downloadSoftware() {
 	await dlMariaDB();
 	await unZip([MARIADB_PATH, NGINX_PATH]);
 	organizeFiles();
-	await cloneGitRepo();
 	console.log(chalk.cyan.bold("Installation complete!\n Server files will be located at " + SERVER_PATH + ".\n Please run the batch file 'finish-setup' before running the server.\n After the server is running, execute migrate.bat located in the forumation folder to initialize the database." ));
 }
 
@@ -149,19 +149,8 @@ function organizeFiles() {
 		fse.copy("./resources/stop-server.bat", SERVER_PATH + "/stop-server.bat", (err) => {if(err) throw err;});
 		fse.copy("./resources/finish-setup.bat", SERVER_PATH + "/finish-setup.bat", (err) => {if(err) throw err;});
 		fse.copy("./resources/migrate.bat", SERVER_PATH + "/forumation/migrate.bat", (err) => {if(err) throw err;});
-	})
-}
-
-/*
-	Clone forumation git repository.
-*/
-function cloneGitRepo() {
-	return new Promise((resolve, reject) => {
-		console.log(chalk.cyan("Cloning git repo.. please wait"));
-		clone('https://github.com/ThePadna/Forumation.git', SERVER_PATH + "/forumation", '', (err) => {
-			if(err) reject(err);
-			fse.copy(SERVER_PATH + "/forumation/example.env", SERVER_PATH + "/forumation/.env",(err) => {if(err) reject(err)});
-			resolve();
+		fse.copy("/forumation", SERVER_PATH, (err) => {
+			console.log(chalk.red("Error: forumation folder not found in installer directory. Please clone Forumation from github and place in /forumation-server before running."));
 		});
-	});
+	})
 }

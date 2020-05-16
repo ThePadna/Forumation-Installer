@@ -17,6 +17,7 @@
     "fs-extra": "^9.0.0",
     "git-clone": "^0.1.0",
     "request": "^2.88.2",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "simple-git": "^2.4.0"
   }
 }
