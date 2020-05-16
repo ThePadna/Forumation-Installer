@@ -13,10 +13,11 @@ Secondly, clone or download this script. Clone or download [Forumation](https://
 #### Step 3
 
 Thirdly, run the installation files in order:
-1. install-dependencies.bat
-2. run-installer.bat
-3. finish-setup.bat (located in /forumation-server)
-4. migrate.bat (located in /forumation-server/forumation)
+1. Run install-dependencies.bat
+2. Run run-installer.bat
+3. Run finish-setup.bat (located in /forumation-server)
+4. Run start-server.bat or have your MySQL server listening. (located in /forumation-server)
+5. Run migrate.bat (located in /forumation-server/forumation)
 
 ### How do I run the server?
 There are 2 batch files located in /forumation-server, 'start-server' and 'stop-server'. php-cgi daemon must be running on port 9000.
