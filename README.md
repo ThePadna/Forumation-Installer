@@ -1,5 +1,5 @@
 # Forumation-Installer
-Script for easy installation of Forumation and surrounding software.
+Script for easy installation of [Forumation](https://github.com/ThePadna/Forumation) and surrounding software.
 
 ## Prerequisites
 
