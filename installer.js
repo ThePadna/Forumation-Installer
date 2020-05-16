@@ -150,9 +150,18 @@ function organizeFiles() {
 		fse.copy("./resources/start-server.bat", SERVER_PATH + "/start-server.bat", (err) => {if(err) throw err;});
 		fse.copy("./resources/stop-server.bat", SERVER_PATH + "/stop-server.bat", (err) => {if(err) throw err;});
 		fse.copy("./resources/finish-setup.bat", SERVER_PATH + "/finish-setup.bat", (err) => {if(err) throw err;});
-		fse.copy("./resources/migrate.bat", SERVER_PATH + "/forumation/migrate.bat", (err) => {if(err) throw err;});
-		fse.copy("/Forumation-master", SERVER_PATH + "/forumation", (err) => {
-			console.log(chalk.red("Error: forumation folder not found in installer directory. Please clone Forumation from github and structure it as /forumation-server/forumation before running.\nAlternatively, download forumation, place it in the installer directory, delete " + SERVER_PATH + ", and re-run this program."));
+		new Promise((resolve, reject) => {
+			fse.copy("./Forumation-master", SERVER_PATH + "/forumation", (err) => {
+				if(err) {
+				reject(err);
+				console.log(chalk.red("Error: forumation folder not found in installer directory. Please clone Forumation from github and structure it as /forumation-server/forumation before running.\nAlternatively, download forumation, place it in the installer directory, delete " + SERVER_PATH + ", and re-run this program."));
+				}
+				resolve();
+			});
+		})
+		.catch((x) => {console.log(x);})
+		.then(() => {
+		fse.copy("./resources/migrate.bat", SERVER_PATH + "/forumation/migrate.bat", (err) => {if(err) throw err;})
 		});
 	})
 }
