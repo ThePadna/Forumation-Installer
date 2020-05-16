@@ -1,0 +1,2 @@
+node ./installer.js
+PAUSE

@@ -1,0 +1,22 @@
+{
+  "name": "forumation-installer",
+  "version": "1.0.0",
+  "description": "Installer for forumation software.",
+  "main": "index.js",
+  "scripts": {
+    "test": "forumation"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.4.14",
+    "async": "^3.2.0",
+    "chalk": "^4.0.0",
+    "clear": "^0.1.0",
+    "figlet": "^1.4.0",
+    "fs-extra": "^9.0.0",
+    "git-clone": "^0.1.0",
+    "request": "^2.88.2",
+    "rimraf": "^3.0.2"
+  }
+}
