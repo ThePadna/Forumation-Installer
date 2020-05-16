@@ -161,7 +161,8 @@ function organizeFiles() {
 		})
 		.catch((x) => {console.log(x);})
 		.then(() => {
-		fse.copy("./resources/migrate.bat", SERVER_PATH + "/forumation/migrate.bat", (err) => {if(err) throw err;})
+		fse.copy("./resources/migrate.bat", SERVER_PATH + "/forumation/migrate.bat", (err) => {if(err) throw err;});
+		fse.copy(SERVER_PATH + "/forumation/example.env", SERVER_PATH + "/forumation/.env", (err) => {if(err) throw err;});
 		});
 	})
 }
