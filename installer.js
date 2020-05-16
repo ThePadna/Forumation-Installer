@@ -33,7 +33,7 @@ async function downloadSoftware() {
 		PHP download scripts currently blocked..
 	*/
 	//await dlPHP();
-	if(fse.existsSync(SERVER_PATH) {
+	if(fse.existsSync(SERVER_PATH)) {
 		console.log(chalk.red("Error: You must remove " + SERVER_PATH + " if you wish to run this program again."));
 		return;
 	}
