@@ -4,7 +4,7 @@ Script for easy installation of Forumation and surrounding software.
 ## Prerequisites
 Step 1
 ```
-Firstly, make sure NodeJS (https://nodejs.org/en/download/), Composer (https://getcomposer.org/download/) and PHP (https://www.php.net/downloads.php) are installed on your system.
+Firstly, make sure [NodeJS](https://nodejs.org/en/download/), [Composer](https://getcomposer.org/download/) and [PHP](https://www.php.net/downloads.php) are installed on your system.
 ```
 Step 2
 ```
