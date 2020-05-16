@@ -23,5 +23,5 @@ Thirdly, run the installation files in order:
 There are 2 batch files located in /forumation-server, 'start-server' and 'stop-server'. php-cgi daemon must be running on port 9000.
 
 ### How do I run php-cgi daemon?
-Head to the directory where you installed php, execute php-cgi.exe -b 127.0.0.1:9000. Feel free to use a different port, but you must modify Nginx.conf.
+Head to the directory where you installed php, execute `php-cgi.exe -b 127.0.0.1:9000`. Feel free to use a different port, but you must modify Nginx.conf.
 
