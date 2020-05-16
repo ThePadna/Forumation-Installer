@@ -1,12 +1,10 @@
 const chalk = require('chalk');
 const clear = require('clear');
 const figlet = require('figlet');
-const clone = require('git-clone');
 const http = require('http');
 const request = require('request');
 const admzip = require('adm-zip');
 const fse = require("fs-extra");
-const git = require("simple-git");
 
 const NGINX_PATH = "./nginx",
  MARIADB_PATH = "./mariadb",
@@ -35,6 +33,10 @@ async function downloadSoftware() {
 		PHP download scripts currently blocked..
 	*/
 	//await dlPHP();
+	if(fse.existsSync(SERVER_PATH) {
+		console.log(chalk.red("Error: You must remove " + SERVER_PATH + " if you wish to run this program again."));
+		return;
+	}
 	await dlNginx();
 	await dlMariaDB();
 	await unZip([MARIADB_PATH, NGINX_PATH]);
@@ -149,8 +151,8 @@ function organizeFiles() {
 		fse.copy("./resources/stop-server.bat", SERVER_PATH + "/stop-server.bat", (err) => {if(err) throw err;});
 		fse.copy("./resources/finish-setup.bat", SERVER_PATH + "/finish-setup.bat", (err) => {if(err) throw err;});
 		fse.copy("./resources/migrate.bat", SERVER_PATH + "/forumation/migrate.bat", (err) => {if(err) throw err;});
-		fse.copy("/forumation", SERVER_PATH, (err) => {
-			console.log(chalk.red("Error: forumation folder not found in installer directory. Please clone Forumation from github and place in /forumation-server before running."));
+		fse.copy("/Forumation-master", SERVER_PATH + "/forumation", (err) => {
+			console.log(chalk.red("Error: forumation folder not found in installer directory. Please clone Forumation from github and structure it as /forumation-server/forumation before running.\nAlternatively, download forumation, place it in the installer directory, delete " + SERVER_PATH + ", and re-run this program."));
 		});
 	})
 }
