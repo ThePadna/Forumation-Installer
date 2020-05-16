@@ -8,7 +8,8 @@ Script for easy installation of [Forumation](https://github.com/ThePadna/Forumat
 Firstly, make sure [NodeJS](https://nodejs.org/en/download/), [Composer](https://getcomposer.org/download/) and [PHP](https://www.php.net/downloads.php) are installed on your system.
 #### Step 2
 
-Secondly, clone or download this script. Unzip into any path you like.
+Secondly, clone or download this script. Clone or download [Forumation](https://github.com/ThePadna/Forumation) and place it in the script's folder under the name 'Forumation'.
+
 #### Step 3
 
 Thirdly, run the installation files in order:
