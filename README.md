@@ -1,5 +1,5 @@
 # Forumation-Installer
-Script for easy installation of [Forumation](https://github.com/ThePadna/Forumation) and surrounding software.
+Script for easy installation of [Forumation](https://github.com/ThePadna/Forumation) and surrounding software. This guide is for Windows installation and serves as an easy way for you to setup a testing environment (you can also host it on Windows if you wish).
 
 ## Prerequisites
 
