@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "adm-zip": "^0.4.14",
-    "async": "^3.2.0",
+    "async": "^3.2.2",
     "chalk": "^4.0.0",
     "clear": "^0.1.0",
     "figlet": "^1.4.0",
